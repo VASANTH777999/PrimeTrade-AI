@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrimeTrade AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="app-bg text-gray-900" style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;">
+  <div class="min-h-screen">
+    <header class="glass-card">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="h-8 w-8 rounded bg-indigo-600"></div>
+          <span class="font-bold text-xl text-gradient">PrimeTrade AI</span>
+        </div>
+        <nav class="space-x-4">
+          <a id="nav-login" href="/login" class="btn btn-outline">Login</a>
+          <a id="nav-register" href="/register" class="btn btn-secondary">Register</a>
+          <a id="nav-dashboard" href="/dashboard" class="btn btn-primary hidden">Dashboard</a>
+          <button id="nav-logout" class="btn btn-outline hidden">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+      <section id="section-hero" class="mb-10">
+        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl p-10 text-white shadow-xl">
+          <h1 class="text-4xl font-bold mb-3">Secure, Scalable REST API</h1>
+          <p class="opacity-90">Authentication, RBAC, CRUD, and a modern UI to interact with your APIs.</p>
+        </div>
+      </section>
+
+      <section id="section-register" class="hidden">
+        <div class="glass-card p-6">
+          <h2 class="text-xl font-semibold mb-4">Create Account</h2>
+          <form id="form-register" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium">Email</label>
+              <input type="email" id="register-email" class="mt-1 w-full input" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Password</label>
+              <input type="password" id="register-password" class="mt-1 w-full input" placeholder="Minimum 8 characters" required />
+            </div>
+            <button class="btn btn-primary">Register</button>
+          </form>
+          <p id="register-message" class="mt-4 text-sm"></p>
+        </div>
+      </section>
+
+      <section id="section-login" class="hidden">
+        <div class="glass-card p-6">
+          <h2 class="text-xl font-semibold mb-4">Login</h2>
+          <form id="form-login" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium">Email</label>
+              <input type="email" id="login-email" class="mt-1 w-full input" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Password</label>
+              <input type="password" id="login-password" class="mt-1 w-full input" required />
+            </div>
+            <button class="btn btn-primary">Login</button>
+          </form>
+          <p id="login-message" class="mt-4 text-sm"></p>
+        </div>
+      </section>
+
+      <section id="section-dashboard" class="hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-1 glass-card p-6">
+            <h2 class="text-xl font-semibold mb-4">Create Task</h2>
+            <form id="form-task" class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium">Title</label>
+                <input type="text" id="task-title" class="mt-1 w-full input" required />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Description</label>
+                <textarea id="task-desc" class="mt-1 w-full input" rows="4"></textarea>
+              </div>
+              <button class="btn btn-primary">Add Task</button>
+            </form>
+            <p id="task-message" class="mt-4 text-sm"></p>
+          </div>
+          <div class="lg:col-span-2 glass-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-xl font-semibold">Your Tasks</h2>
+              <div>
+                <label class="text-sm mr-2">Admin view</label>
+                <input type="checkbox" id="toggle-all" class="align-middle" />
+              </div>
+            </div>
+            <ul id="task-list" class="space-y-3"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

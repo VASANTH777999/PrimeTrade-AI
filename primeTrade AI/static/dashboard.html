@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard • PrimeTrade AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="app-bg" style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;">
+  <header class="glass-card">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <div class="h-8 w-8 rounded bg-indigo-600"></div>
+        <a href="/" class="font-bold text-xl">PrimeTrade AI</a>
+      </div>
+      <nav class="space-x-4">
+        <a id="nav-login" href="/login" class="btn btn-outline">Login</a>
+        <a id="nav-register" href="/register" class="btn btn-secondary">Register</a>
+        <a id="nav-dashboard" href="/dashboard" class="btn btn-primary">Dashboard</a>
+        <button id="nav-logout" class="btn btn-outline">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <section id="section-dashboard">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-1 glass-card p-6">
+          <h2 class="text-xl font-semibold mb-4 text-gradient">Create Task</h2>
+          <form id="form-task" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium">Title</label>
+              <input type="text" id="task-title" class="mt-1 w-full input" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Description</label>
+              <textarea id="task-desc" class="mt-1 w-full input" rows="4"></textarea>
+            </div>
+            <button class="btn btn-primary">Add Task</button>
+          </form>
+          <p id="task-message" class="mt-4 text-sm"></p>
+        </div>
+        <div class="lg:col-span-2 glass-card p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-semibold">Your Tasks</h2>
+            <div>
+              <label class="text-sm mr-2">Admin view</label>
+              <input type="checkbox" id="toggle-all" class="align-middle" />
+            </div>
+          </div>
+          <ul id="task-list" class="space-y-3"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
